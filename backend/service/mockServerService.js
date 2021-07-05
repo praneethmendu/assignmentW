@@ -10,20 +10,10 @@ csv()
         mainData = jsonArrayObj
     })
 
-exports.getMachine = (customerId) => mainData.find(entry => {
-
-    console.log(entry.CustomerId, customerId)
-    return (entry.CustomerId == customerId)
-
-})
-
-
+exports.getMachine = (customerId) => mainData.find(entry => entry.CustomerId == customerId)
 
 exports.queryAll = (customer, drainSensorOn, pump5On, pump10On, waterTemp, waterLevel) => {
-    console.log('params ::', customer, drainSensorOn, pump5On, pump10On, waterTemp, waterLevel);
-
     let filteredData = mainData
-
 
     if (typeof customer !== 'undefined' && customer !== null) {
         filteredData = filteredData

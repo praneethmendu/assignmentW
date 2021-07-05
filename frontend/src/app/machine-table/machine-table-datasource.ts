@@ -6,11 +6,7 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 import { Machine, MachineQueryParams } from "../../model/machine";
 import { MachineService } from "../../api/machine.service";
 
-/**
- * Data source for the MachineTable view. This class should
- * encapsulate all logic for fetching and manipulating the displayed data
- * (including sorting, pagination, and filtering).
- */
+
 export class MachineTableDataSource extends DataSource<Machine> {
   data: Machine[] = [];
   paginator: MatPaginator;
@@ -32,19 +28,6 @@ export class MachineTableDataSource extends DataSource<Machine> {
   connect(): Observable<Machine[]> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
-    // const dataMutations = [
-    //   observableOf(this.data),
-    //   this.paginator.page,
-    //   this.sort.sortChange
-    // ];
-
-    // return merge(...dataMutations).pipe(map(() => {
-    //   return this.getPagedData(this.getSortedData([...this.data]));
-    // }));
-
-    console.log(this.params.waterTemp);
-    
-
     return this.machineService.queryMachines(
       'customer' in this.params ? this.params.customer : null,
       this.params.drainSensorOn ? this.params.drainSensorOn : null,

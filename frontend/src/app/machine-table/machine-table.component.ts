@@ -39,16 +39,12 @@ export class MachineTableComponent implements AfterViewInit, OnInit {
   ngAfterViewInit() {
     
     console.log('view init');
-    
-    // this.dataSource = new MachineTableDataSource(this.queryParams, this.machineService);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
 
   ngOnChanges() {
-    // console.log('ngonchanges');
-    
     this.dataSource = new MachineTableDataSource(this.queryParams, this.machineService);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
