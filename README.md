@@ -5,7 +5,7 @@ Hi Wassenburg, thank you for this opportunity. Hope you like my code.
 # frontend
 I made my front end using Angular. It is based on a very basic SPA pattern with three pages / views
 
-![alt text](https://github.com/praneethmendu/assignmentW/blob/main/images/img1.jpg?raw=true){width="150px"}
+![alt text](https://github.com/praneethmendu/assignmentW/blob/main/images/img1.jpg?raw=true){width="80px"}
 
 The Dashboard is where overall status of the system will be displayed. 
 ![alt text](https://github.com/praneethmendu/assignmentW/blob/main/images/img2.jpg?raw=true | width=150)
