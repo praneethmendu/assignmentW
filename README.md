@@ -5,17 +5,18 @@ Hi Wassenburg, thank you for this opportunity. Hope you like my code.
 # frontend
 I made my front end using Angular. It is based on a very basic SPA pattern with three pages / views
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/praneethmendu/assignmentW/blob/main/images/img1.jpg?raw=true)
 
 The Dashboard is where overall status of the system will be displayed. 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/praneethmendu/assignmentW/blob/main/images/img2.jpg?raw=true)
 
-The search page lets you filter entries based on available parameters and displays them below.
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+The search page lets you filter entries based on available parameters and displays them below. You can open each machine individually.
+![alt text](https://github.com/praneethmendu/assignmentW/blob/main/images/img3.jpg?raw=true)
 
-The machine is page is for displaying details of an individual 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+The machine is page is for displaying details of an individual machine or for requesting a machine by ID
+![alt text](https://github.com/praneethmendu/assignmentW/blob/main/images/img4.jpg?raw=true)
 
+https://www.figma.com/file/P2cq6U29z5WSPqkBcVmXzt/Untitled?node-id=0%3A1
 
 # backend
 
