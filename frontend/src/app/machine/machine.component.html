@@ -1,0 +1,14 @@
+<div *ngIf="showSearch">
+  <br><br>
+  <mat-form-field class="inner" appearance="fill" [formGroup]="form">
+    <mat-label>customer id</mat-label>
+    <input matInput formControlName='idInput'>
+  </mat-form-field>
+
+  <div class="inner">
+    <button mat-raised-button (click)="onSubmit()" color="primary">Get</button>
+  </div>
+</div>
+<div class="simple-padding">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,166 @@
+openapi: 3.0.1
+info:
+  title: EWD DB interface
+  description: This is a prototype server.
+  contact:
+    email: praneethmendu@gmail.com
+  version: 1.0.0
+servers:
+- url: https://localhost:8080/api
+- url: http://localhost:8080/api
+tags:
+- name: machine
+  description: Everything about your machines
+paths:
+  /query:
+    get:
+      tags:
+      - machine
+      summary: query all machines
+      description: query all available machines with filters like customer and server
+        status
+      operationId: queryMachines
+      parameters:
+      - name: customer
+        in: query
+        description: filter based on customer's name
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: drainSensorOn
+        in: query
+        description: filter based on drain sensor status
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      - name: pump5On
+        in: query
+        description: filter based on pump 5 status
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      - name: pump10On
+        in: query
+        description: filter based on pump 10 status
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      - name: waterTemp
+        in: query
+        description: filter based on water temp value
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eq:
+                  type: integer
+
+      - name: waterLevel
+        in: query
+        description: filter based on water temp value
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eq:
+                  type: integer
+                gt:
+                  type: integer
+                lt:
+                  type: integer
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Machine'
+                x-content-type: application/json
+        "400":
+          description: Invalid status value
+          content: {}
+      x-swagger-router-controller: Machine
+  /machine/{customerId}:
+    get:
+      tags:
+      - machine
+      summary: machine by id
+      description: get machine by customerId
+      operationId: machineId
+      parameters:
+      - name: customerId
+        in: path
+        description: ID of machine to return
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Machine'
+        "400":
+          description: Invalid status value
+          content: {}
+      x-swagger-router-controller: Machine
+components:
+  schemas:
+    Machine:
+      required:
+      - customerId
+      type: object
+      properties:
+        customerId:
+          type: integer
+          format: int64
+        customerName:
+          type: string
+          example: UMC Utrecht
+        MachineNr:
+          type: string
+          example: UMC-342
+        MachineId:
+          type: integer
+          format: int64
+        MachineTypeSerial:
+          type: string
+          example: EWD440;4813850810101
+        Process:
+          type: string
+          example: WashDis
+        ProcessTime:
+          type: string
+          example: Start:2019-20-04 20:10:04.12 ;End:2019-20-04 21:29:20.734
+        SensorData:
+          type: string
+          example: WaterTemp:celcius:25;Pump10:on;Pump5:off;DrainSensor:off;WaterLevel:ml-382;
+        OnlineFrom:
+          type: string
+          example: 08-09-2017 18:12:43
+      example:
+        MachineId: 6
+        ProcessTime: Start:2019-20-04 20:10:04.12 ;End:2019-20-04 21:29:20.734
+        customerId: 0
+        MachineNr: UMC-342
+        OnlineFrom: 08-09-2017 18:12:43
+        MachineTypeSerial: EWD440;4813850810101
+        Process: WashDis
+        SensorData: WaterTemp:celcius:25;Pump10:on;Pump5:off;DrainSensor:off;WaterLevel:ml-382;
+        customerName: UMC Utrecht

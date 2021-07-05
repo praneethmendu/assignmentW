@@ -1,0 +1,58 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="customerId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>customerId</th>
+      <td mat-cell *matCellDef="let row">
+        <a [routerLink]="['/machine', row.CustomerId]">{{row.CustomerId}}
+          <mat-icon aria-hidden="false" aria-label="Example home icon">open_in_full</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+
+    <!-- CustomerName Column -->
+    <ng-container matColumnDef="customerName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>customerName</th>
+      <td mat-cell *matCellDef="let row">{{row.CustomerName}}</td>
+    </ng-container>
+    <!-- MachineNr Column -->
+    <ng-container matColumnDef="machineNr">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>machineNr</th>
+      <td mat-cell *matCellDef="let row">{{row.MachineNr}}</td>
+    </ng-container>
+    <!-- MachineId Column -->
+    <ng-container matColumnDef="machineId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>machineId</th>
+      <td mat-cell *matCellDef="let row">{{row.MachineId}}</td>
+    </ng-container>
+    <!-- machineTypeSerial Column -->
+    <ng-container matColumnDef="machineTypeSerial">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>machineTypeSerial</th>
+      <td mat-cell *matCellDef="let row" class="small-cell">{{splitLines(row.MachineTypeSerial)}}</td>
+    </ng-container>
+
+    <!-- MachineId Column -->
+    <ng-container matColumnDef="process">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>process</th>
+      <td mat-cell *matCellDef="let row">{{row.Process}}</td>
+    </ng-container>
+    <!-- machineTypeSerial processTime -->
+    <ng-container matColumnDef="processTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>processTime</th>
+      <td mat-cell *matCellDef="let row" class="small-cell">{{splitLines(row.ProcessTime)}}</td>
+    </ng-container>
+
+    <!-- onlineFrom Column -->
+    <ng-container matColumnDef="onlineFrom">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>onlineFrom</th>
+      <td mat-cell *matCellDef="let row">{{row.OnlineFrom}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator [length]="dataSource?.data.length" [pageIndex]="0" [pageSize]="50"
+    [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>

@@ -1,0 +1,104 @@
+<div class="simple-padding">
+
+  <form [formGroup]="myForm">
+    <mat-form-field appearance="fill">
+      <mat-label>customer</mat-label>
+      <input matInput formControlName="customer">
+    </mat-form-field>
+    <br>
+
+
+    <b>Pump 5 should be</b>
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select formControlName="pump5On">
+        <mat-option value="true">on</mat-option>
+        <mat-option value="false">off</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    &nbsp;&nbsp;&nbsp;
+    <b>Pump 10 should be</b>
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select formControlName="pump10On">
+        <mat-option value="true">on</mat-option>
+        <mat-option value="false">off</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+
+    <b>drain sensor should be</b>
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select formControlName="drainSensorOn">
+        <mat-option value="true">on</mat-option>
+        <mat-option value="false">off</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>water temp</mat-label>
+      <input matInput formControlName="waterTemp">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select formControlName="waterTempOp">
+        <mat-option value="eq">equal to</mat-option>
+        <mat-option value="lt">less than</mat-option>
+        <mat-option value="gt">greater than</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>water level</mat-label>
+      <input matInput formControlName="waterLevel">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select formControlName="waterLevelOp">
+        <mat-option value="eq">equal to</mat-option>
+        <mat-option value="lt">less than</mat-option>
+        <mat-option value="gt">greater than</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+
+  <span class='mild-padding'>
+    <button mat-raised-button (click)="resetForm()">Reset</button>
+  </span>
+
+  <span class='mild-padding'>
+    <button mat-raised-button (click)="submitForm()" color="primary">Search</button>
+  </span>
+  <br><br>
+
+  <app-machine-table [queryParams]="formattedParams" *ngIf="showTable"></app-machine-table>
+
+
+
+  <!--
+
+        <mat-form-field appearance="fill">
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style" #group="matButtonToggleGroup"
+        formControl="pump5On">
+        <mat-button-toggle value="bold" > Bold</mat-button-toggle>
+        <mat-button-toggle value="italic">Italic</mat-button-toggle>
+        <mat-button-toggle value="underline">Underline</mat-button-toggle>
+      </mat-button-toggle-group>
+    </mat-form-field>
+  <mat-form-field appearance="fill" formControlName="area">
+    <mat-label>Water level</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+
+
+-->
+
+</div>

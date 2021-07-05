@@ -1,0 +1,12 @@
+.simple-padding {
+    padding: 3%;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+    background: #424242;
+}
+
+::ng-deep .mat-progress-bar {
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px #202020 ;
+}

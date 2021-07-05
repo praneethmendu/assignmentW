@@ -1,0 +1,92 @@
+<div *ngIf="machine$ | async as machine">
+  <section>
+    <div>
+      <button mat-raised-button color="primary" routerLink='/machine'>
+        {{machine.CustomerId}}
+        <mat-icon aria-hidden="false" aria-label="Example home icon">close</mat-icon>
+      </button>
+    </div>
+  </section>
+  <br>
+
+  <table class="mat-table info-table">
+    <tr class="mat-header-row">
+      <td class="mat-cell">name</td>
+      <td class="mat-cell">{{machine.CustomerName}}</td>
+    </tr>
+
+    <tr class="mat-row">
+      <td class="mat-cell">machine number</td>
+      <td class="mat-cell">{{machine.MachineNr}}</td>
+    </tr>
+
+    <tr class="mat-row">
+      <td class="mat-cell">machine id</td>
+      <td class="mat-cell">{{machine.MachineId}}</td>
+    </tr>
+
+    <tr class="mat-header-row">
+      <td class="mat-cell">process type serial</td>
+      <td class="mat-cell">
+        {{machine.MachineTypeSerial.split(';')[0]}}
+        <br><span style="font-size: xx-small;">{{machine.MachineTypeSerial.split(';')[1]}}</span>
+      </td>
+    </tr>
+
+    <tr class="mat-row">
+      <td class="mat-cell">process</td>
+      <td class="mat-cell">{{machine.Process}}</td>
+    </tr>
+
+    <tr class="mat-row">
+      <td class="mat-cell">process time start</td>
+      <td class="mat-cell">{{machine.ProcessTime.split(';')[0].replace('Start:','')}}</td>
+    </tr>
+
+
+    <tr class="mat-row">
+      <td class="mat-cell">process time end</td>
+      <td class="mat-cell">{{machine.ProcessTime.split(';')[1].replace('End:','')}}</td>
+    </tr>
+
+
+    <tr class="mat-header-row">
+      <td class="mat-cell">online from</td>
+      <td class="mat-cell">{{machine.OnlineFrom}}</td>
+    </tr>
+
+    <tr class="mat-row">
+      <td class="mat-cell">water temp (celcius)</td>
+      <td class="mat-cell">{{machine.SensorData.split(';')[0].replace('WaterTemp:celcius:','')}}</td>
+    </tr>
+
+    <tr class="mat-row">
+      <td class="mat-cell">pump 10 status</td>
+      <td class="mat-cell">{{machine.SensorData.split(';')[1].replace('Pump10:','')}}</td>
+    </tr>
+
+
+    <tr class="mat-row">
+      <td class="mat-cell">pump 5 status</td>
+      <td class="mat-cell">{{machine.SensorData.split(';')[2].replace('Pump5:','')}}</td>
+    </tr>
+
+    <tr class="mat-row">
+      <td class="mat-cell">drain sensor status</td>
+      <td class="mat-cell">{{machine.SensorData.split(';')[3].replace('DrainSensor:','')}}</td>
+    </tr>
+
+    <tr class="mat-row">
+      <td class="mat-cell">water level (ml)</td>
+      <td class="mat-cell">{{machine.SensorData.split(';')[4].replace('WaterLevel:ml-','')}}</td>
+    </tr>
+
+
+    <tr class="mat-row">
+      <td class="mat-cell">water temp (celcius)</td>
+      <td class="mat-cell">{{machine.SensorData.split(';')[0].replace('WaterTemp:celcius:','')}}</td>
+    </tr>
+
+  </table>
+
+</div>

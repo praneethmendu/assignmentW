@@ -1,0 +1,13 @@
+<div class="simple-padding">
+
+  <h2>machines online</h2>
+  ({{allData.length}}/10)
+  <br> <br>
+  <mat-progress-bar mode="determinate" [value]="allData.length*10" color="white"></mat-progress-bar>
+
+  <br>
+  <h2>details</h2>
+  <br>
+
+  <app-machine-table [queryParams]="{}"></app-machine-table>
+</div>

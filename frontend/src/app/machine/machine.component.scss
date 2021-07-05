@@ -1,0 +1,60 @@
+.mat-raised-button {
+    width: 5em;
+    height: 3.5em;
+}
+
+.button-container {
+    padding-bottom: 1.34375em;
+    margin-bottom: 5em;
+}
+
+.example-full-width {
+    padding: 2em;
+}
+
+.center-piece {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+
+
+
+
+  .searchcontainer {
+    text-align:center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+ }
+
+ .searchcontainer .search-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ }
+
+mat-form-field.mat-form-field {
+    font-size: 12px;
+    width: 300px;
+}
+
+button.mat-stroked-button {
+    font-size: 14px;
+    height: 42px;
+    margin: 10px;
+}
+
+
+.inner  {
+    display: table;
+    margin: 0 auto;
+  }
+
+  .simple-padding {
+    padding: 3%;
+}
