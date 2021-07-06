@@ -19,7 +19,7 @@ The Dashboard is where overall status of the system will be displayed.
 The search page lets you filter entries based on available parameters and displays them below. You can open each machine individually.
 ![alt text](https://github.com/praneethmendu/assignmentW/blob/main/images/img3.jpg?raw=true)
 
-The machine is page is for displaying details of an individual machine or for requesting a machine by ID
+The machine page is for displaying details of an individual machine or for requesting a machine by ID
 ![alt text](https://github.com/praneethmendu/assignmentW/blob/main/images/img4.jpg?raw=true)
 
 https://www.figma.com/file/P2cq6U29z5WSPqkBcVmXzt/Untitled?node-id=0%3A1
